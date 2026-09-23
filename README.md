@@ -1,37 +1,112 @@
+
 # GreenBite Market — Business Analysis with SQL
 
-A business analysis project using **MySQL, SQL, Pandas, and Matplotlib** to analyze transactional data from a fictional retail chain.
+A data analysis project using **MySQL, SQL, Python, Pandas, and Matplotlib** to analyze transactional data from a fictional retail chain.
 
-The project focuses on answering business questions related to customers, products, sales, employees, and branch performance through relational SQL analysis.
+The project focuses on turning **business questions into SQL queries**, extracting meaningful metrics, and communicating results through data analysis and visualization.
 
 ---
 
-## Project Overview
+## Project Highlights
 
-GreenBite Market is a fictional retail chain that sells groceries and everyday products across multiple branches.
+* Designed and queried a relational database with **7 related tables**
+* Analyzed customers, products, categories, sales, employees, and branches
+* Used **JOINs, aggregations, CTEs, filtering, and multi-level aggregation**
+* Extracted SQL results into **Pandas** for further analysis
+* Created business-oriented visualizations with **Matplotlib**
+* Documented the complete analysis in a **Jupyter Notebook**
+* Used environment variables to keep database credentials outside the source code
 
-The objective of this project is to practice relational database analysis by transforming business questions into SQL queries and analyzing the resulting data.
+---
 
-The project covers:
+## Business Questions
+
+The project answers **10 business questions** related to:
 
 * Customer purchasing behavior
-* Product and category performance
+* Customer spending and purchase frequency
+* Product performance
+* Category performance
 * Sales by branch
 * Employee and branch relationships
 * Transaction-level analysis
-* Business-oriented metrics
+* Average purchase value
+
+Each question follows the same analysis workflow:
+
+**Business Question → SQL Query → Result → Interpretation → Visualization (when relevant)**
+
+---
+
+## Visualizations
+
+The project includes visualizations to communicate selected business results.
+
+### Revenue by Category
+
+![1790176172336](image/README/1790176172336.jpg)
+
+<!-- Add screenshot here -->
+
+<br>
+
+### Sales Revenue by Branch
+
+![1790176188157](image/README/1790176188157.jpg)
+
+<!-- Add screenshot here -->
+
+<br>
+
+### Additional Analysis
+
+![1790176197659](image/README/1790176197659.jpg)
+
+<!-- Add screenshot here if you decide to include another visualization -->
 
 ---
 
 ## Technologies
 
-* **MySQL** — Relational database
-* **SQL** — Data querying and analysis
-* **Python** — Data analysis and visualization
-* **Pandas** — Data extraction and tabular analysis
-* **Matplotlib** — Data visualization
-* **Jupyter Notebook** — Analysis environment
-* **python-dotenv** — Environment variable management
+| Technology                 | Purpose                              |
+| -------------------------- | ------------------------------------ |
+| **MySQL**            | Relational database                  |
+| **SQL**              | Data querying and business analysis  |
+| **Python**           | Data analysis and visualization      |
+| **Pandas**           | Data extraction and tabular analysis |
+| **Matplotlib**       | Data visualization                   |
+| **Jupyter Notebook** | Analysis environment                 |
+| **python-dotenv**    | Environment variable management      |
+
+---
+
+## Database Structure
+
+The database contains seven related tables:
+
+| Table             | Description                    |
+| ----------------- | ------------------------------ |
+| `branches`      | Store branches                 |
+| `employees`     | Employees assigned to branches |
+| `customers`     | Customers                      |
+| `sales`         | Sales transactions             |
+| `sales_details` | Products included in each sale |
+| `products`      | Product catalog                |
+| `categories`    | Product categories             |
+
+The database uses **primary and foreign keys** to establish relationships between entities.
+
+```text
+categories
+    │
+    └── products
+             │
+             └── sales_details
+                       │
+                       └── sales ─── customers
+                              │
+                              └── employees ─── branches
+```
 
 ---
 
@@ -70,71 +145,41 @@ greenbite-market-sql/
 
 ---
 
-## Database Structure
+## Analysis Notebook
 
-The database contains seven related tables:
-
-| Table             | Description                    |
-| ----------------- | ------------------------------ |
-| `branches`      | Store branches                 |
-| `employees`     | Employees assigned to branches |
-| `customers`     | Customers                      |
-| `sales`         | Sales transactions             |
-| `sales_details` | Products included in each sale |
-| `products`      | Product catalog                |
-| `categories`    | Product categories             |
-
-The database uses primary and foreign keys to establish relationships between entities.
-
-```text
-categories
-    │
-    └── products
-             │
-             └── sales_details
-                       │
-                       └── sales ─── customers
-                              │
-                              └── employees ─── branches
-```
-
----
-
-## Analysis
-
-The analysis is documented in the Jupyter Notebook:
+The complete analysis is available in:
 
 `notebooks/greenbite_business_analysis.ipynb`
 
-The notebook contains **10 business questions**, with each analysis including:
+The notebook contains **10 business questions**, with each analysis documenting the reasoning from the business problem to the final result.
 
-1. Business question
-2. SQL query
-3. Query result
-4. Data extraction using Pandas where applicable
-5. Visualization where relevant
+The notebook combines:
 
-The analysis focuses on selecting the appropriate table relationships and aggregation level for each business question.
+* SQL queries
+* MySQL database connection
+* Pandas
+* Matplotlib
+* Business-oriented interpretation
 
 ---
 
 ## Reproducibility
 
-The project provides two ways to reproduce the database.
+The project provides two ways to recreate the database.
 
-### Option 1 — Load the CSV files
+### Option 1 — Import the CSV files
 
-The files inside `data/tables/` contain the raw data for each database table.
+The files inside `data/tables/` contain the data for each database table.
 
 They can be imported into MySQL using tools such as the **MySQL Workbench Table Data Import Wizard**.
 
-The expected loading order should respect the foreign key relationships between tables.
+The tables should be loaded in an order that respects their foreign key relationships.
 
-### Option 2 — Insert the data using SQL
+### Option 2 — Run the SQL scripts
 
-The repository also includes SQL scripts for creating and populating the database.
+The repository includes SQL scripts for creating and populating the database.
 
-Run the scripts in the following order:
+Run them in this order:
 
 ```text
 1. database_setup.sql
@@ -142,11 +187,9 @@ Run the scripts in the following order:
 3. business_analysis.sql
 ```
 
-`database_setup.sql` creates the database structure and relationships.
-
-`data_insertion.sql` inserts the data into the corresponding tables.
-
-`business_analysis.sql` contains the SQL queries used for the business analysis.
+* `database_setup.sql` creates the database structure and relationships.
+* `data_insertion.sql` inserts the data into the corresponding tables.
+* `business_analysis.sql` contains the SQL queries used for the business analysis.
 
 ---
 
@@ -168,23 +211,31 @@ The `.env` file should **not** be committed to the repository.
 
 ---
 
-## Skills Demonstrated
+## SQL Skills Demonstrated
 
 * Relational database analysis
 * Primary and foreign key relationships
-* INNER JOIN
-* LEFT JOIN
+* `INNER JOIN`
+* `LEFT JOIN`
 * Multiple-table joins
-* GROUP BY
+* `GROUP BY`
 * Aggregate functions
-* SUM()
-* COUNT()
-* COUNT(DISTINCT)
-* Common Table Expressions (CTEs)
-* ORDER BY
-* LIMIT
-* WHERE filtering
+* `SUM()`
+* `COUNT()`
+* `COUNT(DISTINCT)`
+* Common Table Expressions (`CTEs`)
+* `ORDER BY`
+* `LIMIT`
+* `WHERE` filtering
 * Calculated metrics
 * Multi-level aggregation
 * Result-set granularity
 * Translating business questions into SQL queries
+
+---
+
+## What This Project Demonstrates
+
+This project demonstrates the ability to work with a relational dataset from **database setup through business analysis and visualization**.
+
+The main focus was not only on writing SQL syntax, but on understanding **how tables relate to each other, choosing the appropriate level of aggregation, and translating business questions into measurable results**.
