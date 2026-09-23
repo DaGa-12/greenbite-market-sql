@@ -1,4 +1,3 @@
-
 # GreenBite Market — Business Analysis with SQL
 
 A data analysis project using **MySQL, SQL, Python, Pandas, and Matplotlib** to analyze transactional data from a fictional retail chain.
@@ -38,31 +37,17 @@ Each question follows the same analysis workflow:
 
 ---
 
-## Visualizations
-
-The project includes visualizations to communicate selected business results.
-
 ### Revenue by Category
 
-![1790176912875](image/README/1790176912875.jpg)
-
-<!-- Add screenshot here -->
-
-<br>
+![1790178999849](image/README/visualisation-Q8.png)
 
 ### Sales Revenue by Branch
 
-![1790176918837](image/README/1790176918837.jpg)
-
-<!-- Add screenshot here -->
-
-<br>
+![1790178980458](image/README/visualisation-Q9.png)
 
 ### Additional Analysis
 
-![1790176924221](image/README/1790176924221.jpg)
-
-<!-- Add screenshot here if you decide to include another visualization -->
+![1790178425219](image/README/visualisation-Q10.png)
 
 ---
 
