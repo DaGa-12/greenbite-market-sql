@@ -39,15 +39,15 @@ Each question follows the same analysis workflow:
 
 ### Revenue by Category
 
-![1790178999849](image/README/visualisation-Q8.png)
+![visualisation-Q8.png](image/README/visualisation-Q8.png)
 
 ### Sales Revenue by Branch
 
-![1790178980458](image/README/visualisation-Q9.png)
+![visualisation-Q9.png](image/README/visualisation-Q9.png)
 
 ### Additional Analysis
 
-![1790178425219](image/README/visualisation-Q10.png)
+![visualisation-Q10.png](image/README/visualisation-Q10.png)
 
 ---
 
