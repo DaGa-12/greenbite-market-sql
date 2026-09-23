@@ -44,7 +44,7 @@ The project includes visualizations to communicate selected business results.
 
 ### Revenue by Category
 
-![1790176172336](image/README/1790176172336.jpg)
+![1790176912875](image/README/1790176912875.jpg)
 
 <!-- Add screenshot here -->
 
@@ -52,7 +52,7 @@ The project includes visualizations to communicate selected business results.
 
 ### Sales Revenue by Branch
 
-![1790176188157](image/README/1790176188157.jpg)
+![1790176918837](image/README/1790176918837.jpg)
 
 <!-- Add screenshot here -->
 
@@ -60,7 +60,7 @@ The project includes visualizations to communicate selected business results.
 
 ### Additional Analysis
 
-![1790176197659](image/README/1790176197659.jpg)
+![1790176924221](image/README/1790176924221.jpg)
 
 <!-- Add screenshot here if you decide to include another visualization -->
 
